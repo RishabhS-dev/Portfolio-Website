@@ -1,0 +1,154 @@
+/* Background color */
+body {
+    background-color: #171515;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    cursor: none; /* Hide default cursor */
+}
+
+/* Particle style */
+.particle {
+    position: absolute;
+    background-color: #00ffa0;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.1s linear;
+}
+
+/*Written Content*/
+.Heading{
+    color: #033ab1;
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 700;
+    font-style:bold;
+    font-size: 50px;
+}
+
+/* Styling the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #171515;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Heading styles */
+.Heading h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Hero text container */
+.hero_text_container {
+    text-align: center;
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: Bold;
+    font-size: 100px;
+}
+
+.hero_text_title li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.hero_text_title li span {
+    display: inline-block;
+}
+
+
+/* Navbar styles */
+/* General body styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #171515;
+}
+
+/* Navbar styling */
+.navbar {
+    position: fixed;  /* Fixed to the top */
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px 0;
+    z-index: 1000;  /* Ensures it stays on top of other elements */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+/* Styling for the nav list */
+.list {
+    list-style: none;
+    display: flex;
+    justify-content: center;  /* Center links horizontally */
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for each nav link */
+.link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 20px;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Positioning the lines */
+.link::before {
+    top: 0; /* Line above the link */
+    left: 0; /* Starts from the left */
+    width: 0; /* Initially hidden */
+}
+
+.link::after {
+    bottom: 0; /* Line below the link */
+    right: 0; /* Starts from the right */
+    width: 0; /* Initially hidden */
+}
+
+/* Hover effect: Expand the lines from opposite directions */
+.link:hover::before {
+    width: 100%; /* Expands from left to right */
+}
+
+.link:hover::after {
+    width: 100%; /* Expands from right to left */
+}
+
+/* Hover effect: Color change and underline */
+.link:hover {
+    color: rgb(9, 93, 158);
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Main content styling */
+.content {
+    margin-top: 150px;  /* Space below the navbar */
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+}
+.date-time {
+    color: #fff;
+    font-size: 16px;
+    margin-left: auto; /* Move date/time to the right */
+}
