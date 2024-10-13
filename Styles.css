@@ -1,24 +1,60 @@
-html {
-    scroll-behavior: smooth;
-}
-/* Background color */
-body {
-    background-color: #171515;
+* {
+    box-sizing: border-box;
     margin: 0;
-    height: 100vh;
-    overflow: hidden;
-    cursor: none; /* Hide default cursor */
-    overflow-y:scroll;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+body {
     font-family: Arial, sans-serif;
-    background-color: #171515;
-    color: #fff;
+    color: #ffffff;
+}
+
+.hero {
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    margin: 0;
-    overflow-y:scroll;
+    background: linear-gradient(135deg, #212121);
+    text-align: center;
+    position: relative; /* Added to enable absolute positioning of children */
+}
+
+.hero_text h1 {
+    font-size: 4rem;
+    opacity: 0; /* Animation will control this */
+}
+
+.hero_text p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    opacity: 0; /* Animation will control this */
+}
+
+section {
+    padding: 100px 20px;
+    background-color: #212121;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.about {
+    background-color: #212121;
+}
+
+.projects {
+    background-color: #212121;
+}
+
+.contact {
+    background-color: #212121;
+}
+
+.project-item {
+    margin: 20px 0;
 }
 
 /* Particle style */
@@ -28,11 +64,13 @@ body {
     border-radius: 50%;
     pointer-events: none;
     opacity: 1;
+    cursor: hidden;
     transition: opacity 0.1s linear;
+    overflow: auto;
 }
 
 /* Heading styles */
-.Heading h1 {
+.heading h1 { /* Fixed class name to lowercase */
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
@@ -43,11 +81,9 @@ body {
     text-align: center;
     font-family: "Protest Strike", sans-serif;
     font-weight: 400;
-    font-style: Bold;
     font-size: 100px;
-  /* Existing styles... */
     position: absolute;
-    top: 40%; /* Center vertically */
+    top: 50%; /* Center vertically */
     transform: translateY(-50%); /* Offset to counteract centering */
     z-index: 1; /* Ensure it stays above other elements */
 }
@@ -56,7 +92,7 @@ body {
     list-style: none;
     display: inline-block;
     margin: 0 10px;
-    z-index:0;
+    z-index: 0;
 }
 
 .hero_text_title li span {
@@ -65,12 +101,12 @@ body {
 
 /* Navbar styling */
 .navbar {
-    position: fixed;  /* Fixed to the top */
+    position: fixed; /* Fixed to the top */
     top: 0;
     width: 100%;
-    background-color: #171515; /* Semi-transparent background */
+    background-color: #171717; /* Semi-transparent background */
     padding: 20px 0;
-    z-index: 1000;  /* Ensures it stays on top of other elements */
+    z-index: 1000; /* Ensures it stays on top of other elements */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
 }
 
@@ -78,7 +114,7 @@ body {
 .list {
     list-style: none;
     display: flex;
-    justify-content: center;  /* Center links horizontally */
+    justify-content: center; /* Center links horizontally */
     margin: 0;
     padding: 0;
 }
@@ -95,13 +131,13 @@ body {
 
 /* Hover effect: Color change and underline */
 .link:hover {
-    color: rgb(9, 93, 158);
+    color:#00bf78;
     transform: scale(1.1); /* Slight zoom on hover */
 }
 
 /* Main content styling */
 .content {
-    margin-top: 300px;  /* Space below the navbar */
+    margin-top: 300px; /* Space below the navbar */
     text-align: center;
 }
 
@@ -113,49 +149,149 @@ h1 {
 p {
     font-size: 20px;
 }
+
 .date-time {
     color: #fff;
     font-size: 16px;
-    margin: auto; /* Move date/time to the right */
+    margin:auto; 
+    text-align:left;
+    justify-content: left; 
+}
+/* Custom Cursor */
+.custom-cursor {
+    position: fixed;
+    width: 20px; /* Customize size */
+    height: 20px; /* Customize size */
+    background-color: #00ffa0; /* Cursor color */
+    border-radius: 50%;
+    pointer-events: none; /* Prevents interference with mouse events */
+    transition: transform 0.2s ease; /* Smooth transition */
+    mix-blend-mode: difference; /* This will help blend with background */
+    z-index: 9999; /* Keep it on top */
+    opacity: 0; /* Start invisible */
 }
 
+/* Body */
+body {
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    background-color:#171717; /* Set the body background color to black */
+}
 
-/*project sliderrrr*/
-.banner{
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
+/* General icon styling */
+.contact a {
+    text-decoration: none; /* Ensure no underline */
 }
-.banner .slider{
-    position: absolute;
-    width: 200px;
-    height: 250px;
-    top: 10%;
-    left: calc(50% - 100px);
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-    animation: autoRun 20s linear infinite;
-    z-index: 2;
+
+.contact a ion-icon {
+    font-size: 40px; /* Increase size of icons */
+    padding: 15px; /* Add padding inside the icon for smoother look */
+    border-radius: 10px; /* Make icons smoother by adding rounded corners */
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.1); /* Optional background to make the icon stand out */
+    margin:0px 20px
 }
-@keyframes autoRun{
-    from{
-        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
-    }to{
-        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+
+/* Hover effect for icons */
+.contact a:hover ion-icon {
+    transform: scale(1.2); /* Slight zoom on hover */
+    color: aliceblue; /* Change color on hover */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Add a softer glowing effect */
+}
+
+/* LinkedIn */
+.linkd ion-icon {
+    color: #0077b5;
+}
+
+/* GitHub */
+.gitd ion-icon {
+    color: #195f07;
+}
+
+/* Twitter/X */
+.twitd ion-icon {
+    color: #1da1f2;
+}
+
+/* WhatsApp */
+.watd ion-icon {
+    color: #25d366;
+}
+
+/* Mail */
+.maild ion-icon {
+    color: #ea4335;
+}
+
+/* Add smooth rotation animation on hover */
+@keyframes animate {
+    from {
+        filter: hue-rotate(0deg);
+    }
+    to {
+        filter: hue-rotate(360deg);
     }
 }
 
-.banner .slider .item{
-    position: absolute;
-    inset: 0 0 0 0;
-    transform: 
-        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-        translateZ(550px);
+.contact a:hover {
+    animation: animate 1s infinite; /* Optional - for rotating colors on hover */
 }
-.banner .slider .item img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+.resume-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the color from the parent element */
+    font-weight: bold; /* Optional: Make the text bold */
+    cursor: pointer; /* Show a pointer cursor when hovering */
+    padding: 10px 20px; /* Add padding if needed */
+    background-color: #0077b5; /* Optional: Add a background color */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    color: white; /* Set text color */
+    transition: background-color 0.3s ease; /* Smooth background color change */
+}
+
+.resume-link:hover {
+    background-color: #005f8f; /* Change background on hover */
+}
+/* Additional styles for the typing effect */
+.hero_text {
+    position: relative; /* Ensure it can position children */
+}
+
+.typing-text {
+    font-size: 1.2rem; /* Smaller than the main heading */
+    font-weight: 300;
+    color: #00ffa0; /* Adjust color as desired */
+    margin-top: 10px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid; /* Caret style */
+    animation: typing 5s steps(30, end), blink-caret 0.75s step-end infinite; /* Typing and caret blink */
+    text-align: center; /* Center align text */
+}
+
+/* Typing effect */
+@keyframes typing {
+    from {
+        width: 0; /* Start hidden */
+    }
+    to {
+        width: 34ch; /* Adjust to match the full length of text */
+    }
+}
+
+/* Blinking cursor */
+@keyframes blink-caret {
+    from,
+    90% { /* Keep it visible until 90% of the animation */
+        border-color: #00ffa0; /* Color of the blinking caret */
+    }
+    100% { /* At 100%, make it transparent */
+        border-color: transparent;
+    }
+}
+
+/* Adding a delay to remove the cursor */
+.typing-text {
+    animation: typing 5s steps(30, end), blink-caret 0.75s step-end 5s forwards; /* Hide cursor after typing */
 }
