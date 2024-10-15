@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -45,7 +46,7 @@ section {
     font-size: 1.5rem; /* Increased size for better readability */
     max-width: 60%;
     font-family: "Exo 2", sans-serif;
-    line-height: 2.5; /* Improve spacing between lines */
+    line-height: 2; /* Improve spacing between lines */
 }
 
 .profilepic {
@@ -77,17 +78,15 @@ section {
 
 .about h2 {
     font-size: 3rem;
-    margin-bottom: 40px; /* Add spacing between heading and content */
+    margin-bottom: 50px;
     font-family: "Exo 2", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    text-align: center; /* Center heading */
-    width: 100%; /* Make heading take up full width */
+    color: #fff;
 }
 
 .about h3 {
-    font-size:40px;
+    margin-bottom: 3;
+    font-size:30px;
+    font-weight: 300;
 }
 .wave {
     animation-name: wave-animation;
@@ -202,6 +201,13 @@ section {
     background-color: #212121;
 }
 
+.contact h2{
+    font-size: 3rem;
+    margin-bottom: 25px;
+    font-family: "Exo 2", sans-serif;
+    color: #fff;
+}
+
 .project-item {
     margin: 20px 0;
 }
@@ -305,6 +311,7 @@ p {
     margin:auto; 
     text-align:left;
     justify-content: left; 
+    margin-left: 10px;
 }
 /* Custom Cursor */
 .custom-cursor {
@@ -332,6 +339,7 @@ body {
 }
 
 .contact a ion-icon {
+    margin-top: 100px;
     font-size: 40px; /* Increase size of icons */
     padding: 15px; /* Add padding inside the icon for smoother look */
     border-radius: 10px; /* Make icons smoother by adding rounded corners */
@@ -387,19 +395,18 @@ body {
 }
 
 .resume-link {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit the color from the parent element */
-    font-weight: bold; /* Optional: Make the text bold */
-    cursor: pointer; /* Show a pointer cursor when hovering */
-    padding: 10px 20px; /* Add padding if needed */
-    background-color: #0077b5; /* Optional: Add a background color */
-    border-radius: 5px; /* Optional: Add rounded corners */
-    color: white; /* Set text color */
-    transition: background-color 0.3s ease; /* Smooth background color change */
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 20px;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
+
 .resume-link:hover {
-    background-color: #005f8f; /* Change background on hover */
+    color:#00bf78;
+    transform: scale(1.1); /* Change background on hover */
 }
 /* Additional styles for the typing effect */
 .hero_text {
