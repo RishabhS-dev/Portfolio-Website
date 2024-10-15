@@ -133,3 +133,8 @@ document.addEventListener("DOMContentLoaded", function() {
     setInterval(updateDateTime, 1000);
     updateDateTime();
 });
+
+window.addEventListener('load', function() {
+    const profilePic = document.querySelector('.profilepic');
+    profilePic.classList.add('profilepic-loaded'); // Add class to trigger transition
+});
