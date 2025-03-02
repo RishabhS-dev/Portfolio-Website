@@ -145,8 +145,14 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Force two columns */
     gap: 30px;
+}
+
+@media (max-width: 768px) { /* Adjust for smaller screens */
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
 }
 
 .project-item {
